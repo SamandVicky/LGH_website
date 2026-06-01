@@ -1,0 +1,678 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="robots" content="noindex"/>
+    <meta name="robots" content="noindex"/>
+    <link href="/login" rel="canonical"/>
+
+    <script type="text/javascript"
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<script src="https://static.cdn-website.com/mnlt/production/6335/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    jQuery.migrateMute = true;
+</script>
+<script type="text/javascript" src="https://static.cdn-website.com/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://static.cdn-website.com/libs/jqueryui/1.13.2/smoothness/jquery-ui.min.css" />
+<script type="text/javascript" src="/editor/login/login.js"></script>
+    <script type="text/javascript" src="/editor/scripts/dm.fbconnect.js"></script>
+    <script type="text/javascript"
+            src="/common/scripts/dm.trackstats.jsp?v=2026-04-06T10_48_40"></script>
+
+    <title>Login to your Duda account</title>
+
+    <link type="text/css" rel="stylesheet" href="/editor/direct/css/template.css"/>
+
+
+    <style>
+  :root {
+   --font-size-h1: 48px;  --logo-url: url(/editor/dudaone/images/duda_logo.svg);  --text-on-button: #FFF;  --font-size-h6: 16px;  --font-size-h4: 24px;  --font-size-h5: 20px;  --font-size-h2: 40px;  --font-size-plain-text: 16px;  --font-size-h3: 32px;  --font-size-body-text: 13px;  --font-size-body: 14px;  --header-border-color: #1b1e25;  --font-size-tiny-text: 12px;  --font-size-footer: 12px;  --font-size-tiny: 13px;  --eclectic-15: #E0D3FF;  --eclectic-14: #FFE3FC;  --link-color: #2d6598;  --eclectic-13: #FDDACD;  --eclectic-12: #CAF34F;  --eclectic-11: #A9C38B;  --eclectic-10: #FAED75;  --d-title-font: Label Sans;  --font-size-pageDescription: 16px;  --header-text-opposite-color: #FFFFFF;  --eclectic-19: #FFFAC3;  --eclectic-18: #DAF4BF;  --eclectic-17: #F1FFC6;  --eclectic-16: #E5CDFF;  --dark-primary-color: #272B35;  --button-hover-color: #F86F4C;  --text-on-light: #F56D41;  --eclectic-3: #F07C5A;  --eclectic-4: #A61C7C;  --eclectic-5: #FDA7F4;  --eclectic-6: #8055DF;  --eclectic-7: #AE68FA;  --eclectic-8: #98E9FF;  --backgroundImage: none;  --eclectic-9: #D6F6FF;  --font-size-he-1: 16px;  --eclectic-1: #161111;  --eclectic-2: #EAE4E2;  --font-size-he-4: 12px;  --font-size-italic: 14px;  --font-size-he-2: 14px;  --font-size-he-3: 13px;  --d-font: Label Sans;  --button-color: #F56D41;  --font-size-bodySubtitle: 14px;  --header-color: #FFFFFF;  --font-size-display-2: 24px;  --font-size-display-1: 32px;  --backgroundColor: #F6F5F5;  --font-size-display-4: 10px;  --font-size-display-3: 20px;  --loginButtonHoverColor: rgb(237,105,63);  --visible-button-hover-color: rgb(222,99,59);  --button-visible-font-color: #ffffff;  --text-on-dark: #F56D41;  --header-text-color: #272B35;  --oneDevicesFontIconColor: #676767; 
+  }
+</style>
+
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+
+<link type="text/css" rel="stylesheet" href="/editor/login/login.css?v=2"/>
+<LINK REL="SHORTCUT ICON" HREF="/favicon_d1_new.png">
+<!-- Fonts Include -->
+<!-- loadCSS function fonts.jsp-->
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+<link rel="stylesheet" type="text/css" href="https://static.cdn-website.com/mnlt/production/6335/_dm/s/rt/dist/css/css-font-package.min.css" />
+<link type="text/css" rel="stylesheet" href="/_dm/s/rt/css/font-icons/wl-fonts/nee.dmfonts.css"/>
+<style id="wlCustomCss">
+    </style>
+<link type="text/css" rel="stylesheet" href="/editor/direct/css/dm.fbconnect.css"/>
+
+    <!-- add IE specific css for the editor and analytics -->
+    <!--[if IE 7]>
+    <link type="text/css" rel="stylesheet" href="css/Editor_IE7.css"/>
+    <link type="text/css" rel="stylesheet" href="css/sharingStyles_IE7.css">
+
+    <![endif]-->
+    <!--[if IE 8]>
+    <link type="text/css" rel="stylesheet" href="css/Editor_IE.css"/>
+    <![endif]-->
+
+    <script type="text/javascript">
+        window.dCurrentScreen = 'login';
+
+        function fbConnectDone(fbLogin) {
+            if (fbLogin && fbLogin.ok)
+                window.location = fbLogin.redirectTo;
+        }
+
+        $(document).ready(function () {
+            $('#j_username').focus();
+            $("#dmLodinForm").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $(this).submit();
+                }
+            });
+            window.localStorage.removeItem("ED_ONBOARDING");
+            window.localStorage.removeItem("TOUR");
+        });
+    </script>
+
+    <script src='https://www.google.com/recaptcha/enterprise.js?render=6Ld3f6EnAAAAAHl9YzkhxOwfq6NzuuEfXpyazpf5'
+            async defer></script>
+
+    <script type="text/javascript">
+        function captchaCallback(token) {
+            $('form.lgForm').submit();
+        }
+    </script>
+
+    </head>
+
+<script src="/editor/nee/utils/nee.b64.js"></script>
+<script type="text/javascript" src="/common/commonStringsScript.jsp?lang=en&v=2026-04-06T10_48_40"></script>
+<script type="text/javascript" src="/editor/nee/utils/common/modules/module.storage.js"></script>
+<script type="text/javascript" src="/editor/nee/utils/common/modules/module.cookies.js"></script>
+<script type="text/javascript" src="/common/commonPropsScript.jsp?config="></script>
+<style>
+  .signupBody, .wlLogin {
+    display: none;
+  }
+</style>
+
+<script src="https://static.cdn-website.com/war/editor/ed/bower_components/requirejs/require.js"></script>
+<script src="/editor/services/modulesManager.js"></script>
+
+<script>
+	var moduleName = 'login';
+</script>
+<script>
+    window.addEventListener("load", function() {
+        window.$.modulesManager.getModuleAsync("login")
+            .then(function (module) {
+                return module.getLoginService();
+            })
+            .then(function (loginService) {
+                var container = document.createElement('div');
+                container.style.width="100%";
+                var signupBox = document.getElementsByClassName('lgForm');
+                if (signupBox) {
+                    var parent = signupBox[0].parentNode;
+                    parent.replaceChild(container, signupBox[0]);
+                    if(false) {
+                        loginService.getLoginScreen({
+                            element: container,
+                            lang: "en",
+                            captcha: true ? {
+                                siteKey: "6Ld3f6EnAAAAAHl9YzkhxOwfq6NzuuEfXpyazpf5",
+                            } : null,
+                            isWLReseller: false
+                        })
+                    } else {
+                        loginService.getLoginPage({
+                            element: container,
+                            lang: "en",
+                            captcha: true ? {
+                                siteKey: "6Ld3f6EnAAAAAHl9YzkhxOwfq6NzuuEfXpyazpf5",
+                            } : null,
+                            isWLReseller: false
+                        })
+                    }
+                }
+            });
+    }, false);
+</script>
+
+<body class="signupBody">
+<style>
+  .separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15px;
+    padding-top: 20px;
+  }
+
+  .separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #A4A8AA;
+  }
+
+  .separator::before {
+    margin-right: .3em;
+  }
+
+  .separator::after {
+    margin-left: .3em;
+  }
+
+  #orText {
+    font-size: 14px;
+    color: #A4A8AA;
+  }
+</style>
+<div class="signupBodyInner">
+    <script src="/editor/nee/utils/nee.b64.js"></script>
+<script type="text/javascript" src="/common/commonStringsScript.jsp?lang=en&v=2026-04-06T10_48_40"></script>
+<script>
+var dm_account_locale = 1;
+
+function changeLanguage(langCode) {
+	var index = window.location.href.indexOf("?lang=");
+	var url =  window.location.href;
+	
+	if(index != -1) {
+		url = url.substr(0, index);
+	}
+	
+	url += ("?lang=" + langCode);
+	window.location.href = url;
+}
+</script>
+
+<div class="signupShellTopWrapper">
+	<div class="signupShellTopInnerWrapper">
+		<a class="signupShellDudaLogo" href="http://www.duda.co/"></a>
+		<div class="signupShellTopRight">
+			<div class="signupLocaleWrapper">
+		          <div class="signupLocaleButton">
+		            <a onclick="$('.signupLocalePopUp').toggleClass('scaleDown')">
+			            <span class="signupLocaleIcon"></span>
+			            <span id="signupLocaleTextCurrent" class="signupLocaleText">English</span>
+			            <span class="signupLocaleArrow"></span>
+		            </a>
+		          </div>
+		           <style>
+					/*  #dmLocale4{
+					 	display:none;
+					 } */
+					 </style>         
+		          <div class="signupLocalePopUp">
+		          <script>
+									$("#signupLocaleTextCurrent").html('English');
+		        		  </script>
+		        		  <a class="signupLocaleSelectLine" id="dmLocale2" onclick="changeLanguage('es');">Español (España)</a>
+		        			  <a class="signupLocaleSelectLine" id="dmLocale4" onclick="changeLanguage('pt');">Português</a>
+		        			  <a class="signupLocaleSelectLine" id="dmLocale5" onclick="changeLanguage('fr');">Français</a>
+		        			  <a class="signupLocaleSelectLine" id="dmLocale6" onclick="changeLanguage('de');">Deutsch</a>
+		        			  <a class="signupLocaleSelectLine" id="dmLocale7" onclick="changeLanguage('tr');">Türkçe</a>
+		        			  <a class="signupLocaleSelectLine" id="dmLocale8" onclick="changeLanguage('en_gb');">English (UK)</a>
+		        			  <a class="signupLocaleSelectLine" id="dmLocale9" onclick="changeLanguage('it');">Italiano</a>
+		        			  <a class="signupLocaleSelectLine" id="dmLocale10" onclick="changeLanguage('nl');">Nederlands</a>
+		        			  </div>
+	          </div>
+	          <div class="signupLoginBox">
+	          	<a  href="/login?lang=en">Log In</a> |
+	          	<a  href="/signup?lang=en">Sign Up</a>
+	          </div>
+		</div>
+	</div>
+</div>
+<div class="signupBox">
+        <div class="signupColumn">
+            <h2 class="signupTitle">LOG IN</h2>
+            <div class="loginToSingup">
+                <span>No Account. No problem.</span>
+                <a href="/signup?lang=en">Sign Up Here.</a>
+            </div>
+            <div class="login_error">
+                </div>
+            <style>
+              .signupBox {
+                width: 388px !important;
+              }
+
+              @media only screen and (max-width: 568px) {
+                .signupBox {
+                  width: 300px !important;
+                }
+              }
+            </style>
+            <style>
+  .abcRioButton {
+    border-radius: 1px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .25);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: background-color .218s, border-color .218s, box-shadow .218s;
+    transition: background-color .218s, border-color .218s, box-shadow .218s;
+    -webkit-user-select: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: none;
+    color: #262626;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: auto
+  }
+
+  .abcRioButton:hover {
+    box-shadow: 0 0 3px 3px rgba(66, 133, 244, .3)
+  }
+
+  .abcRioButtonBlue {
+    background-color: #4285f4;
+    border: none;
+    color: #fff
+  }
+
+  .abcRioButtonBlue:hover {
+    background-color: #4285f4
+  }
+
+  .abcRioButtonBlue:active {
+    background-color: #3367d6
+  }
+
+  .abcRioButtonLightBlue {
+    background-color: #fff;
+    color: #757575
+  }
+
+  .abcRioButtonLightBlue:active {
+    background-color: #eee;
+    color: #6d6d6d
+  }
+
+  .abcRioButtonIcon {
+    float: left
+  }
+
+  .abcRioButtonBlue .abcRioButtonIcon {
+    background-color: #fff;
+    border-radius: 1px
+  }
+
+  .abcRioButtonSvg {
+    display: block
+  }
+
+  .abcRioButtonContents {
+    font-family: Roboto, arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .21px;
+    margin-left: 6px;
+    margin-right: 6px;
+    vertical-align: top
+  }
+
+  .abcRioButtonContentWrapper {
+    height: 100%;
+    width: 100%
+  }
+
+  .abcRioButtonBlue .abcRioButtonContentWrapper {
+    border: 1px solid transparent
+  }
+
+  .abcRioButtonErrorWrapper, .abcRioButtonWorkingWrapper {
+    display: none;
+    height: 100%;
+    width: 100%
+  }
+
+  .abcRioButtonErrorIcon, .abcRioButtonWorkingIcon {
+    margin-left: auto;
+    margin-right: auto
+  }
+
+  .abcRioButtonErrorState, .abcRioButtonWorkingState {
+    border: 1px solid #d5d5d5;
+    border: 1px solid rgba(0, 0, 0, .17);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+    color: #262626
+  }
+
+  .abcRioButtonErrorState:hover, .abcRioButtonWorkingState:hover {
+    border: 1px solid #aaa;
+    border: 1px solid rgba(0, 0, 0, .25);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .1)
+  }
+
+  .abcRioButtonErrorState:active, .abcRioButtonWorkingState:active {
+    border: 1px solid #aaa;
+    border: 1px solid rgba(0, 0, 0, .25);
+    box-shadow: inset 0 1px 0 #ddd;
+    color: #262626
+  }
+
+  .abcRioButtonWorkingState, .abcRioButtonWorkingState:hover {
+    background-color: #f5f5f5
+  }
+
+  .abcRioButtonWorkingState:active {
+    background-color: #e5e5e5
+  }
+
+  .abcRioButtonErrorState, .abcRioButtonErrorState:hover {
+    background-color: #fff
+  }
+
+  .abcRioButtonErrorState:active {
+    background-color: #e5e5e5
+  }
+
+  .abcRioButtonErrorState .abcRioButtonErrorWrapper, .abcRioButtonWorkingState .abcRioButtonWorkingWrapper {
+    display: block
+  }
+
+  .abcRioButtonErrorState .abcRioButtonContentWrapper, .abcRioButtonErrorState .abcRioButtonWorkingWrapper, .abcRioButtonWorkingState .abcRioButtonContentWrapper {
+    display: none
+  }
+
+  .wlLoginWrapper {
+    width: 388px;
+  }
+
+  .abcRioButtonContents {
+    margin-left: -33px !important;
+  }
+
+  .abcRioButtonLightBlue {
+    max-width: 100% !important;
+  }
+
+  .auth2link {
+    text-decoration: none !important;
+  }
+
+  .oauth2wapper {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .lockicon::before {
+    content: '\e00f';
+    font-family: 'WL';
+    font-size: 40px;
+    line-height: 20px;
+  }
+
+  .wlLoginWrapper .login_error, .signupBox .login_error {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    color: #e41e1e;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+</style>
+
+<div style="display: inline">
+    <div class="oauth2wapper"><a id="auth2link" class="auth2link" href="/oauth2/redirect/google?remember-me=true">
+        <div style="height:40px;width:388px;" class="abcRioButton abcRioButtonLightBlue">
+            <div class="abcRioButtonContentWrapper">
+                <div class="abcRioButtonIcon" style="padding:10px">
+                    <div style="width:18px;height:18px;"
+                         class="abcRioButtonSvgImageWithFallback abcRioButtonIconImage abcRioButtonIconImage18">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px"
+                             height="18px" viewBox="0 0 48 48" class="abcRioButtonSvg">
+                            <g>
+                                <path fill="#EA4335"
+                                      d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+                                <path fill="#4285F4"
+                                      d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+                                <path fill="#FBBC05"
+                                      d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6`.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+                                <path fill="#34A853"
+                                      d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+                                <path fill="none" d="M0 0h48v48H0z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <span style="font-size:14px;line-height:38px;" class="abcRioButtonContents"><span>Sign in with Google</span></span>
+            </div>
+        </div>
+    </a></div>
+</div>
+<script>
+    (function () {
+        var errorElement = document.getElementsByClassName("login_error")[0];
+        if (location.href.indexOf("login_error") > 0) {
+            errorElement.innerText = "This account couldn’t be found. "
+        }
+
+        const storageKey = 'device_fingerprint';
+
+        function generateDeviceId() {
+            return import('https://openfpcdn.io/fingerprintjs/v3')
+                .then(FingerprintJS => FingerprintJS.load())
+                .then((fp) => fp.get())
+                .then((result) => result.visitorId)
+                .catch((error) => {
+                    console.error('Failed to generate device fingerprint', error);
+                    return null;
+                });
+        }
+
+        function getDeviceId() {
+            try {
+                const storedDeviceId = localStorage.getItem(storageKey);
+                if (storedDeviceId) {
+                    return Promise.resolve(storedDeviceId);
+                }
+                return generateDeviceId().then((newId) => {
+                    if (newId) {
+                        try {
+                            localStorage.setItem(storageKey, newId);
+                        } catch (error) {
+                            console.error('Failed to store device fingerprint', error);
+                        }
+                    }
+                    return newId;
+                });
+            } catch (error) {
+                console.error('Error accessing device fingerprint storage', error);
+                return Promise.resolve(null);
+            }
+        }
+
+        function appendDeviceIdToLink(deviceId) {
+            const authLink = document.getElementById("auth2link");
+            if (!authLink) {
+                return;
+            }
+            const authLinkUrl = new URL(authLink.href);
+            if (deviceId) {
+                authLinkUrl.searchParams.set('deviceId', deviceId);
+            }
+            authLink.href = authLinkUrl.origin + authLinkUrl.pathname + '?'
+                + authLinkUrl.searchParams.toString();
+        }
+
+        let url = new URL(window.location.href);
+        if (url.searchParams.has("next")) {
+            console.log(url.searchParams.has("next"))
+
+            let next = url.searchParams.get("next");
+            url.searchParams.delete('next');
+            const newUrl = url.origin + url.pathname + (url.searchParams.toString() ? '?'
+                + searchParams.toString() : '');
+            window.history.replaceState({}, '', newUrl);
+            const authLink = document.getElementById("auth2link");
+            const authLinkUrl = new URL(authLink.href);
+            const authLinkUrlsearchParams = url.searchParams;
+            authLinkUrlsearchParams.set('next', next);
+            if (authLink.href.includes("remember-me")) {
+                authLinkUrlsearchParams.set('remember-me', 'true');
+            }
+            authLink.href = authLinkUrl.origin + authLinkUrl.pathname + '?'
+                + authLinkUrlsearchParams.toString();
+        }
+
+        getDeviceId().then((deviceId) => {
+            appendDeviceIdToLink(deviceId);
+        });
+    })();
+</script>
+<span id="orText" class="separator">OR</span>
+			<div class="lgForm"></div>
+        </div>
+    </div>
+</div>
+<div class="signupShellBottomWrapper">
+	<div class="signupShellBottomInnerWrapper">
+		<div class="signupShellBottomLeft">Duda &copy;2026</div>
+		<div class="signupShellBottomCenter">
+			<a href="https://www.duda.co/en/privacy.html?_ga=1.266449438.ac663f72-2762-406b-8537-a3f4adbaac31" target="_blank">Privacy</a>
+			<span> | </span>
+			<a href="https://www.duda.co/legal/terms?_ga=1.266449438.ac663f72-2762-406b-8537-a3f4adbaac31" target="_blank">Terms</a>
+			<span> | </span>
+			<a href="https://support.duda.co/Submit_a_Ticket?_ga=1.3862816.ac663f72-2762-406b-8537-a3f4adbaac31" target="_blank">Contact</a>
+		</div>
+		<div class="signupShellBottomRight">
+		</div>
+	</div>
+</div>
+<!--  start analytics section -->
+<script type="text/javascript">
+
+
+var GAU_DIM_UTYPE = 'dimension1';
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-51345613-2',
+{'cookieDomain' : 'multiscreensite.com',
+'clientId' : '49b77ea4-1a72-4ea8-b95f-5e48463990d0',
+'allowLinker' : true});
+
+
+
+ga('set', GAU_DIM_UTYPE, 'ANONYMOUS');
+ga('send', 'pageview');
+</script>
+<!--  end analytics section -->
+</body>
+</html>
+
+
