@@ -759,8 +759,8 @@ body[data-page-alias="home"] #dm_content .dmButtonLink {
     margin-top: 0 !important;
   }
 
-  #dmRoot.dmMobileBody #hamburger-header-container,
-  #dmRoot.dmMobileBody #mobile-hamburger-header {
+  body#dmRoot.dmMobileBody #dm #hamburger-header-container,
+  body#dmRoot.dmMobileBody #dm .p_hfcontainer div#mobile-hamburger-header {
     background: transparent !important;
     border-color: transparent !important;
     box-shadow: none !important;
@@ -769,10 +769,10 @@ body[data-page-alias="home"] #dm_content .dmButtonLink {
     transition: background-color .22s ease, box-shadow .22s ease, border-color .22s ease;
   }
 
-  #dmRoot.dmMobileBody.lgh-mobile-scrolled #hamburger-header-container,
-  #dmRoot.dmMobileBody.lgh-mobile-scrolled #mobile-hamburger-header,
-  body.lgh-drawer-open #hamburger-header-container,
-  body.lgh-drawer-open #mobile-hamburger-header {
+  body#dmRoot.dmMobileBody.lgh-mobile-scrolled #dm #hamburger-header-container,
+  body#dmRoot.dmMobileBody.lgh-mobile-scrolled #dm .p_hfcontainer div#mobile-hamburger-header,
+  body#dmRoot.dmMobileBody.lgh-drawer-open #dm #hamburger-header-container,
+  body#dmRoot.dmMobileBody.lgh-drawer-open #dm .p_hfcontainer div#mobile-hamburger-header {
     background: #fff !important;
     border-color: rgba(0, 0, 0, 0) !important;
     box-shadow: rgba(0, 0, 0, .18) 0 3px 11px 0 !important;
