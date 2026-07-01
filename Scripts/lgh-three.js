@@ -184,6 +184,7 @@
       var z = sizeOf(canvas);
       renderer.setSize(z.w, z.h, false);
       camera.aspect = z.w / z.h;
+      camera.position.z = z.w < 768 ? 7.2 : 5.2;
       camera.updateProjectionMatrix();
     }
     resize();

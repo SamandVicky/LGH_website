@@ -409,6 +409,16 @@
   text-shadow: 0 1px 16px rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 900px) { .lgh-globe-band { min-height: 68vh; padding: 80px 20px; } }
+@media (max-width: 767px) {
+  .lgh-globe-band {
+    min-height: 58vh;
+    padding: 92px 18px 58px;
+  }
+
+  .lgh-globe-band__canvas {
+    opacity: 0.78;
+  }
+}
 
 /* ===================== FAQ rounded corners ===================== */
 #dm .accordion-wrapper { border: 0 !important; }
