@@ -541,6 +541,30 @@ body[data-page-alias="home"] #dm_content .dmButtonLink {
   font-weight: 600;
 }
 
+/* SERVICES gallery on the MOBILE page: the export omits Duda's gallery
+   runtime that honors data-mobile-columns="1", so the 4 tiles stay
+   4-in-a-row (column-4 = 25% each) and their labels/buttons wrap
+   letter-by-letter. Stack them one-per-row full width on the mobile
+   page only (.dmMobileBody); the desktop page keeps its 4-across row. */
+.dmMobileBody #dm .photogallery-row { display: block !important; }
+.dmMobileBody #dm .dmPhotoGalleryHolder.gallery4inArow { width: 100% !important; }
+.dmMobileBody #dm .photogallery-column,
+.dmMobileBody #dm .photogallery-column.column-4 {
+  width: 100% !important; float: none !important; margin: 0 0 22px !important;
+}
+/* full-width tiles give the label + button plenty of room; just make
+   sure nothing breaks mid-word */
+.dmMobileBody #dm .photoGalleryThumbs .caption-title,
+.dmMobileBody #dm .photoGalleryThumbs .caption-title span,
+.dmMobileBody #dm .photoGalleryThumbs .caption-button,
+.dmMobileBody #dm .photoGalleryThumbs .caption-button .text {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  white-space: nowrap !important;
+  width: auto !important;
+  letter-spacing: normal !important;
+}
+
 /* ===================== App showcase (Resources page) ===================== */
 .lgh-apps { display: grid; gap: 72px; margin-top: 8px; }
 .lgh-app {
