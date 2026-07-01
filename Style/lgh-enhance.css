@@ -653,3 +653,77 @@ body[data-page-alias="home"] #dm_content .dmButtonLink {
   z-index: 3;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
 }
+
+/* ============================================================
+   Mobile hamburger drawer (self-contained). Duda's runtime that
+   normally opens this drawer isn't included in the static export,
+   so the enhancement layer drives it. lgh-nav.js relocates the
+   drawer to <body> (to escape a transformed ancestor that traps
+   position:fixed in a low stacking context) and toggles .lgh-open
+   on it. All selectors are scoped to the mobile drawer element,
+   which doesn't exist on the desktop pages, so there is zero
+   effect on the desktop layout.
+   ============================================================ */
+#mobile-hamburger-drawer {
+  position: fixed !important;
+  top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+  width: 100% !important; height: 100% !important; max-height: 100vh !important;
+  background: #0f2136 !important;
+  z-index: 100000 !important;
+  visibility: visible !important;
+  transform: translateY(-100%);
+  transition: transform .34s cubic-bezier(.4, 0, .2, 1);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 62px 0 44px;
+}
+#mobile-hamburger-drawer.lgh-open { transform: translateY(0); }
+#mobile-hamburger-drawer .middleDrawerRow { padding-top: 0 !important; margin-top: 0 !important; }
+#mobile-hamburger-drawer .unifiednav__container { margin-top: 0 !important; }
+
+/* close (X) button injected by lgh-nav.js, pinned top-right of the drawer */
+.lgh-drawer-close {
+  position: absolute; top: 18px; right: 20px;
+  width: 44px; height: 44px; line-height: 40px;
+  padding: 0; margin: 0; border: 0; background: transparent;
+  color: #d4af5a; font-size: 40px; font-weight: 300;
+  cursor: pointer; z-index: 2;
+}
+.lgh-drawer-close:hover { color: #fff; }
+
+/* vertical nav list inside the drawer */
+#mobile-hamburger-drawer .unifiednav__container {
+  display: block; width: 100%; margin: 0; padding: 0; list-style: none;
+}
+#mobile-hamburger-drawer .unifiednav__item-wrap {
+  display: block; width: 100%; border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+/* hide the empty logo/spacer rows Duda leaves in the drawer, keep the nav */
+#mobile-hamburger-drawer > .dmRespRow:not(.middleDrawerRow) { display: none !important; }
+
+#mobile-hamburger-drawer .middleDrawerRow,
+#mobile-hamburger-drawer .unifiednav__container { text-align: left !important; }
+#mobile-hamburger-drawer .unifiednav__item {
+  display: flex !important; align-items: center; justify-content: flex-start !important;
+  width: 100%; padding: 16px 28px; color: #fff; text-decoration: none; text-align: left !important;
+  font-family: Inter, Arial, sans-serif; font-size: 19px; font-weight: 600; letter-spacing: .01em;
+}
+#mobile-hamburger-drawer .unifiednav__item:hover,
+#mobile-hamburger-drawer .unifiednav__item.dmNavItemSelected { color: #d4af5a; }
+#mobile-hamburger-drawer .nav-item-text {
+  display: block !important; width: 100%; text-align: left !important;
+}
+#mobile-hamburger-drawer .icon-angle-down,
+#mobile-hamburger-drawer .icon-angle-right { display: none; }
+
+/* section-anchor sub-menus shown as an indented list under each hub */
+#mobile-hamburger-drawer .unifiednav__container_sub-nav {
+  display: block !important; height: auto !important; max-height: none !important;
+  visibility: visible !important; opacity: 1 !important; position: static !important;
+  background: rgba(255, 255, 255, .03); padding: 4px 0 10px;
+}
+#mobile-hamburger-drawer .unifiednav__container_sub-nav .unifiednav__item {
+  padding: 9px 28px 9px 44px; font-size: 15px; font-weight: 400; color: #b9c6d6;
+}
+#mobile-hamburger-drawer .unifiednav__container_sub-nav .unifiednav__item:hover { color: #d4af5a; }
+#mobile-hamburger-drawer .unifiednav__container_sub-nav .unifiednav__item-wrap { border-bottom: 0; }

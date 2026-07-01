@@ -1,1 +1,9 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=/Pages/desktop/home/index.html"></head><body></body></html>
+<!DOCTYPE html><html><head><meta charset="utf-8"><script>
+(function(){
+  var ua=navigator.userAgent||"";
+  var uaPhone=/Android.*Mobile|iPhone|iPod|Windows Phone|IEMobile|BlackBerry|Opera Mini/i.test(ua);
+  var shortEdge=Math.min(screen.width||9999,screen.height||9999);
+  var isPhone=uaPhone||shortEdge<768;
+  location.replace(isPhone?"/Pages/mobile/home/index.html":"/Pages/desktop/home/index.html");
+})();
+</script><noscript><meta http-equiv="refresh" content="0; url=/Pages/desktop/home/index.html"></noscript></head><body></body></html>
