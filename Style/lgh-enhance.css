@@ -1,0 +1,655 @@
+/* =====================================================================
+   Lifeway Global Harvest — content enhancement styles
+   Added for rebuilt section pages (education, courses, workshops,
+   online-university, more-resources). Scoped under .lgh-page so it
+   never interferes with the site-builder's own styles.
+   ===================================================================== */
+
+.lgh-page {
+  --lgh-ink: #16283f;
+  --lgh-ink-soft: #40546e;
+  --lgh-gold: #c39b45;
+  --lgh-gold-bright: #e2be6a;
+  --lgh-cream: #f7f4ec;
+  --lgh-line: rgba(22, 40, 63, 0.12);
+  display: block;
+  width: 100%;
+  font-family: "Inter", "Poppins", Arial, sans-serif;
+  color: var(--lgh-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.lgh-page * { box-sizing: border-box; }
+
+/* Anchored hub sections land below the fixed header */
+.lgh-page section[id] { scroll-margin-top: 100px; }
+
+/* Let our sections run full-bleed inside the site-builder grid */
+.lgh-row,
+.lgh-row .dmRespColsWrapper,
+.lgh-row .dmRespCol {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  float: none !important;
+}
+
+.lgh-page .lgh-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Hero with Three.js canvas ---------- */
+.lgh-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 62vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 96px;
+  background: radial-gradient(120% 120% at 50% 0%, #1d3454 0%, #0f2136 55%, #0a1626 100%);
+  color: #fff;
+}
+
+.lgh-hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+}
+
+.lgh-hero__vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(70% 70% at 50% 45%, rgba(10, 22, 38, 0) 0%, rgba(10, 22, 38, 0.55) 100%);
+  pointer-events: none;
+}
+
+.lgh-hero__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+}
+
+.lgh-eyebrow {
+  display: inline-block;
+  margin: 0 0 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lgh-gold-bright);
+}
+
+/* The site-builder ships high-specificity heading rules (#dm .dmContent h1…).
+   These !important declarations keep our section typography intact. */
+.lgh-page h1,
+.lgh-page h2,
+.lgh-page h3 {
+  font-family: "Inter", "Poppins", Arial, sans-serif !important;
+  letter-spacing: normal;
+}
+
+.lgh-hero__title {
+  margin: 0 0 22px !important;
+  font-size: clamp(38px, 6vw, 68px) !important;
+  line-height: 1.05 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  color: #fff !important;
+}
+
+.lgh-hero__lead {
+  margin: 0 auto 34px;
+  max-width: 640px;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+/* ---------- Buttons ---------- */
+.lgh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+.lgh-btn--gold {
+  background: linear-gradient(135deg, var(--lgh-gold-bright), var(--lgh-gold));
+  color: #1a1204 !important;
+  box-shadow: 0 12px 30px rgba(195, 155, 69, 0.35);
+}
+.lgh-btn--ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+}
+.lgh-btn--ghost .text,
+.lgh-btn--ghost span { color: #ffffff !important; }
+.lgh-btn:hover { transform: translateY(-2px); }
+.lgh-btn--gold:hover { box-shadow: 0 16px 38px rgba(195, 155, 69, 0.45); }
+.lgh-btn--ghost:hover { background: rgba(255, 255, 255, 0.12); }
+
+.lgh-hero__cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- Generic section ---------- */
+.lgh-section { padding: 84px 0; background: #fff; }
+.lgh-section--cream { background: var(--lgh-cream); }
+.lgh-section--dark {
+  background: radial-gradient(120% 120% at 50% 0%, #1d3454 0%, #0f2136 60%, #0a1626 100%);
+  color: #fff;
+}
+
+.lgh-section__head {
+  max-width: 720px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+.lgh-section__eyebrow {
+  display: inline-block;
+  margin: 0 0 14px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--lgh-gold);
+}
+.lgh-section--dark .lgh-section__eyebrow { color: var(--lgh-gold-bright); }
+.lgh-section__title {
+  margin: 0 0 18px !important;
+  font-size: clamp(28px, 4vw, 42px) !important;
+  line-height: 1.15 !important;
+  font-weight: 700 !important;
+}
+.lgh-section__intro {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--lgh-ink-soft);
+}
+.lgh-section--dark .lgh-section__intro { color: rgba(255, 255, 255, 0.82); }
+
+/* ---------- Card grid ---------- */
+.lgh-grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.lgh-grid--2 { grid-template-columns: repeat(2, 1fr); }
+
+.lgh-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--lgh-line);
+  border-radius: 18px;
+  padding: 34px 30px;
+  box-shadow: 0 18px 40px rgba(16, 33, 54, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+}
+.lgh-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--lgh-gold-bright), var(--lgh-gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.lgh-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 54px rgba(16, 33, 54, 0.12);
+  border-color: rgba(195, 155, 69, 0.4);
+}
+.lgh-card:hover::before { transform: scaleX(1); }
+
+/* Card icons removed per design preference */
+.lgh-card__icon { display: none !important; }
+.lgh-card__meta {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lgh-gold);
+}
+.lgh-card__title {
+  margin: 0 0 12px !important;
+  font-size: 21px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  color: var(--lgh-ink) !important;
+}
+.lgh-card__text {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--lgh-ink-soft);
+}
+
+/* ---------- Feature split ---------- */
+.lgh-feature {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+.lgh-feature__title {
+  margin: 0 0 20px !important;
+  font-size: clamp(26px, 3.4vw, 38px) !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+}
+.lgh-feature__text {
+  margin: 0 0 26px;
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--lgh-ink-soft);
+}
+.lgh-list { list-style: none; margin: 0; padding: 0; }
+.lgh-list li {
+  position: relative;
+  padding: 12px 0 12px 38px;
+  border-bottom: 1px solid var(--lgh-line);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.lgh-list li:last-child { border-bottom: none; }
+.lgh-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 17px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--lgh-gold-bright), var(--lgh-gold));
+  box-shadow: 0 0 0 4px rgba(195, 155, 69, 0.14);
+}
+.lgh-feature__art {
+  position: relative;
+  min-height: 340px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 26px 60px rgba(16, 33, 54, 0.22);
+}
+.lgh-feature__art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Stats strip ---------- */
+.lgh-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+.lgh-stat__num {
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 700;
+  color: var(--lgh-gold-bright);
+  line-height: 1;
+}
+.lgh-stat__label {
+  margin-top: 10px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---------- CTA band ---------- */
+.lgh-cta {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 90px 24px;
+  background: linear-gradient(135deg, #16283f 0%, #223d5f 100%);
+  color: #fff;
+}
+.lgh-cta__canvas { position: absolute; inset: 0; z-index: 0; opacity: 0.9; }
+.lgh-cta__inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+.lgh-cta__title {
+  margin: 0 0 16px !important;
+  font-size: clamp(28px, 4vw, 40px) !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+}
+.lgh-cta__text {
+  margin: 0 0 30px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .lgh-grid, .lgh-grid--2 { grid-template-columns: 1fr; }
+  .lgh-feature { grid-template-columns: 1fr; gap: 34px; }
+  .lgh-feature__art { min-height: 260px; }
+  .lgh-stats { grid-template-columns: repeat(2, 1fr); gap: 34px 20px; }
+  .lgh-hero { min-height: 56vh; padding: 100px 20px 72px; }
+  .lgh-section { padding: 60px 0; }
+}
+@media (max-width: 520px) {
+  .lgh-stats { grid-template-columns: 1fr; }
+}
+
+/* Respect reduced motion — canvases fall back to the CSS gradient */
+@media (prefers-reduced-motion: reduce) {
+  .lgh-hero__canvas, .lgh-cta__canvas { display: none; }
+}
+
+/* ===================== Scroll reveal ===================== */
+.lgh-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+.lgh-reveal.lgh-in { opacity: 1; transform: none; }
+.lgh-feature__art.lgh-reveal { transform: translateY(28px) scale(0.97); }
+.lgh-feature__art.lgh-reveal.lgh-in { transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .lgh-reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* ===================== Home globe band ===================== */
+.lgh-globe-band {
+  position: relative;
+  overflow: hidden;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 110px 24px;
+  background: radial-gradient(120% 90% at 50% 20%, #1b355a 0%, #10233b 45%, #070f1c 100%);
+  color: #fff;
+}
+.lgh-globe-band__canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+.lgh-globe-band__inner { position: relative; z-index: 2; max-width: 760px; }
+.lgh-globe-band__title {
+  margin: 0 0 20px !important;
+  font-size: clamp(30px, 4.6vw, 52px) !important;
+  line-height: 1.1 !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
+}
+.lgh-globe-band__text {
+  margin: 0 auto 32px;
+  max-width: 620px;
+  font-size: clamp(16px, 2vw, 19px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.86);
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 900px) { .lgh-globe-band { min-height: 68vh; padding: 80px 20px; } }
+
+/* ===================== FAQ rounded corners ===================== */
+#dm .accordion-wrapper { border: 0 !important; }
+#dm .accordion-wrapper .accordion-item {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  margin-bottom: 14px !important;
+  border: 1px solid rgba(22, 40, 63, 0.12) !important;
+  box-shadow: 0 10px 26px rgba(16, 33, 54, 0.06) !important;
+  background: #fff;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+#dm .accordion-wrapper .accordion-item:hover {
+  box-shadow: 0 16px 36px rgba(16, 33, 54, 0.12) !important;
+  border-color: rgba(195, 155, 69, 0.4) !important;
+}
+#dm .accordion-wrapper .accordion-title { border-radius: 16px !important; }
+#dm .accordion-wrapper .accordion-item .accordion-title { border: 0 !important; }
+
+/* ===================== FAQ accordion animation ===================== */
+/* The builder collapses answers with height:0 AND max-height:0. Override
+   both when our class is present so the answer expands. */
+#dm .accordion-wrapper .accordion-description,
+#dm .accordion-wrapper .accordion-description .section {
+  transition: max-height 0.4s ease, height 0.4s ease !important;
+}
+#dm .accordion-wrapper .accordion-item.lgh-faq-open .accordion-description,
+#dm .accordion-wrapper .accordion-item.lgh-faq-open .accordion-description .section {
+  height: auto !important;
+  max-height: 2000px !important;
+  overflow: visible !important;
+}
+#dm .accordion-wrapper .accordion-description .section-inner {
+  transition: opacity 0.35s ease;
+  opacity: 0;
+}
+#dm .accordion-wrapper .accordion-item.lgh-faq-open .section-inner { opacity: 1; }
+#dm .accordion-wrapper .arrow { transition: transform 0.35s ease; }
+#dm .accordion-wrapper .accordion-item.lgh-faq-open .arrow { transform: rotate(180deg); }
+#dm .accordion-wrapper .accordion-title { cursor: pointer; }
+
+/* ===================== Round everything on the HOME page ===================== */
+/* Gallery service tiles */
+body[data-page-alias="home"] .photoGalleryThumbs .thumbnailInnerWrapper,
+body[data-page-alias="home"] .photoGalleryThumbs .image-container,
+body[data-page-alias="home"] .photoGalleryThumbs .image-container a {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+body[data-page-alias="home"] .caption-container {
+  border-bottom-left-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+}
+/* Content images */
+body[data-page-alias="home"] #dm_content img {
+  border-radius: 18px;
+}
+/* Buttons -> pills */
+body[data-page-alias="home"] .dmButtonLink,
+body[data-page-alias="home"] .flexButton,
+body[data-page-alias="home"] .caption-button,
+body[data-page-alias="home"] .dmCall,
+body[data-page-alias="home"] .dmformsubmit,
+body[data-page-alias="home"] .dmformsubmit .dmWidget,
+body[data-page-alias="home"] input[type="submit"] {
+  border-radius: 999px !important;
+  overflow: hidden;
+}
+/* Contact form fields */
+body[data-page-alias="home"] .dmforminput input,
+body[data-page-alias="home"] .dmforminput textarea,
+body[data-page-alias="home"] .dmform input:not([type="submit"]),
+body[data-page-alias="home"] .dmform textarea,
+body[data-page-alias="home"] .dmRespDesignCol input,
+body[data-page-alias="home"] .dmRespDesignCol textarea {
+  border-radius: 14px !important;
+}
+/* Map + generic widget boxes */
+body[data-page-alias="home"] .mapContainer,
+body[data-page-alias="home"] .inlineMap,
+body[data-page-alias="home"] .dmCustomWidget img,
+body[data-page-alias="home"] .u_1255808623 .thumbnailInnerWrapper {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+/* Full-bleed image rows on home: soften the inner content corners */
+body[data-page-alias="home"] .dmHomeSection1,
+body[data-page-alias="home"] .dmPhotoGalleryHolder { border-radius: 20px; }
+
+/* ===================== HOME: match the hub-page vibe ===================== */
+/* Typography — switch home headings/text to the same Inter look as the hubs */
+body[data-page-alias="home"] #dm_content h1,
+body[data-page-alias="home"] #dm_content h2,
+body[data-page-alias="home"] #dm_content h3,
+body[data-page-alias="home"] #dm_content h4,
+body[data-page-alias="home"] #dm_content h5,
+body[data-page-alias="home"] #dm_content h6,
+body[data-page-alias="home"] #dm_content .dmNewParagraph span,
+body[data-page-alias="home"] .caption-title,
+body[data-page-alias="home"] .accordion-title h3,
+body[data-page-alias="home"] .dmFooter .dmNewParagraph span {
+  font-family: "Inter", "Poppins", Arial, sans-serif !important;
+  letter-spacing: normal !important;
+}
+body[data-page-alias="home"] #dm_content h1 span,
+body[data-page-alias="home"] #dm_content h2 span,
+body[data-page-alias="home"] #dm_content h3 span { font-weight: 700 !important; }
+
+/* Service tiles behave like the hub cards (lift + shadow on hover) */
+body[data-page-alias="home"] .photoGalleryThumbs {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 20px;
+}
+body[data-page-alias="home"] .photoGalleryThumbs:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 54px rgba(16, 33, 54, 0.18);
+}
+/* Consistent gold gradient + pill on the service tile buttons */
+body[data-page-alias="home"] .caption-button {
+  background: linear-gradient(135deg, #e2be6a, #c39b45) !important;
+  color: #1a1204 !important;
+  border-radius: 999px !important;
+  font-weight: 600 !important;
+}
+body[data-page-alias="home"] .caption-button .text { color: #1a1204 !important; }
+
+/* Slightly tighter, cleaner section rhythm to feel like the hubs */
+body[data-page-alias="home"] #dm_content .dmButtonLink {
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+/* ===================== App showcase (Resources page) ===================== */
+.lgh-apps { display: grid; gap: 72px; margin-top: 8px; }
+.lgh-app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+.lgh-app__shots {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: flex-start;
+}
+/* (screenshot styling handled by the .lgh-phone device frame below) */
+.lgh-app--reverse .lgh-app__shots { order: 2; }
+.lgh-app__eyebrow {
+  display: inline-block;
+  margin: 0 0 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--lgh-gold);
+}
+.lgh-app__title {
+  margin: 0 0 16px !important;
+  font-size: clamp(24px, 3vw, 34px) !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  color: var(--lgh-ink) !important;
+}
+.lgh-app__text {
+  margin: 0 0 26px;
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--lgh-ink-soft);
+}
+/* App Store button */
+.lgh-appstore {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 22px;
+  border-radius: 14px;
+  background: #111;
+  color: #fff !important;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+}
+.lgh-appstore:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3); }
+.lgh-appstore svg { width: 26px; height: 26px; flex: none; }
+.lgh-appstore svg:not(.lgh-gp-icon) { fill: #fff; }
+.lgh-gp-icon { width: 24px; height: 24px; }
+.lgh-appstore .lgh-appstore__txt { display: flex; flex-direction: column; line-height: 1.05; text-align: left; }
+.lgh-appstore .lgh-appstore__small { font-size: 11px; opacity: 0.85; color: #fff !important; }
+.lgh-appstore .lgh-appstore__big { font-size: 18px; font-weight: 600; color: #fff !important; }
+
+@media (max-width: 900px) {
+  .lgh-app { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+  .lgh-app--reverse .lgh-app__shots { order: 0; }
+  .lgh-app__body { display: flex; flex-direction: column; align-items: center; }
+}
+
+/* App store button group */
+.lgh-app__stores { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+@media (max-width: 900px) { .lgh-app__stores { justify-content: center; } }
+
+/* ===================== iPhone device frame ===================== */
+.lgh-app__shots .lgh-phone { width: 47%; max-width: 232px; transition: transform 0.3s ease; }
+.lgh-app__shots .lgh-phone:nth-child(2) { transform: translateY(32px); }
+.lgh-app__shots:hover .lgh-phone:nth-child(1) { transform: translateY(-6px); }
+.lgh-app__shots:hover .lgh-phone:nth-child(2) { transform: translateY(26px); }
+
+.lgh-phone {
+  position: relative;
+  display: block;
+  padding: 6px;                      /* thin bezel */
+  background: linear-gradient(150deg, #3a3a40 0%, #141417 45%, #050506 100%);
+  border-radius: 46px;
+  box-shadow: 0 34px 70px rgba(16, 33, 54, 0.36),
+              inset 0 0 0 1.5px rgba(255, 255, 255, 0.12);
+}
+.lgh-phone__screen {                 /* the screen: clips the screenshot full-bleed */
+  position: relative;
+  display: block;
+  border-radius: 40px;
+  overflow: hidden;
+  background: #fff;
+}
+.lgh-phone__screen img {
+  display: block;
+  width: 100%;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+/* Dynamic Island — floats ON the screenshot */
+.lgh-phone__island {
+  position: absolute;
+  top: 13px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 27%;
+  max-width: 80px;
+  height: 21px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 3;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+}

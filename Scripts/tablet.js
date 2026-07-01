@@ -290,8 +290,8 @@
     "longitude" : "-72.761168"
   },
   "url" : "https://www.lifewayglobal-harvest.com",
-  "telephone" : "860-816-3595",
-  "email" : "victoriavalle0313@gmail.com",
+  "telephone" : "860-205-8432",
+  "email" : "lgh@lifewayglobalharvest.com",
   "logo" : "https://irp.cdn-website.com/e04325c0/dms3rep/multi/imgi_1_cropped-Logo-1-2048x831-removebg-preview.png",
   "@id" : "https://www.lifewayglobal-harvest.com"
 }

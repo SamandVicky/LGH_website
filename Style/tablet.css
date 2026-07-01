@@ -11809,3 +11809,28 @@ div.u_FAQS
 	background-repeat:repeat !important;
 	background-size:auto !important;
 }
+
+/* ===== LGH sticky-header contrast + anchor offset ===== */
+.dmHeaderContainer{transition:background-color .3s ease,box-shadow .3s ease}
+.dmHeaderContainer.lgh-scrolled{background-color:rgba(15,33,54,.94)!important;box-shadow:0 6px 24px rgba(8,18,32,.28)}
+html{scroll-behavior:smooth}
+.lgh-anchor{display:block;height:0;margin:0;padding:0;border:0;scroll-margin-top:110px}
+#OurMission,#WORSHIPSERVICES,#FAQS,#CONTACT,#AboutMinistry{scroll-margin-top:110px}
+
+/* ===== LGH: remove 1px white line above the fixed header ===== */
+html, body.dmRoot { background-color: #0f2136 !important; }
+#dm .dmHeaderContainer { top: 0 !important; }
+
+/* ===== LGH: modern scrollbar (replaces the dated arrow scrollbar) ===== */
+* { scrollbar-width: thin; scrollbar-color: rgba(195,155,69,0.6) rgba(15,33,54,0.06); }
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: rgba(15,33,54,0.06); }
+::-webkit-scrollbar-thumb {
+  background: rgba(195,155,69,0.55);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(195,155,69,0.9); background-clip: content-box; }
+::-webkit-scrollbar-button { display: none !important; width: 0 !important; height: 0 !important; }
+::-webkit-scrollbar-corner { background: transparent; }
