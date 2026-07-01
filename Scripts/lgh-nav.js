@@ -81,7 +81,23 @@
   ready(function () {
     var burger = document.getElementById("layout-drawer-hamburger");
     var drawer = document.getElementById("mobile-hamburger-drawer");
+    var mobileHeader = document.getElementById("mobile-hamburger-header");
     if (!burger || !drawer) return; // desktop layout: nothing to do
+
+    function setMobileScrolled(e) {
+      var eventY = e && e.target && typeof e.target.scrollTop === "number" ? e.target.scrollTop : 0;
+      var y = Math.max(
+        window.pageYOffset || 0,
+        document.documentElement.scrollTop || 0,
+        document.body.scrollTop || 0,
+        eventY
+      );
+      document.body.classList.toggle("lgh-mobile-scrolled", y > 12);
+      if (mobileHeader) mobileHeader.classList.toggle("lgh-mobile-scrolled", y > 12);
+    }
+    setMobileScrolled();
+    window.addEventListener("scroll", setMobileScrolled, true);
+    window.addEventListener("load", setMobileScrolled);
 
     // Move the drawer to <body> so its position:fixed escapes the
     // transformed ancestor that otherwise traps it behind the page.
@@ -97,8 +113,10 @@
 
     function setOpen(open) {
       drawer.classList.toggle("lgh-open", open);
+      document.body.classList.toggle("lgh-drawer-open", open);
       burger.setAttribute("aria-expanded", open ? "true" : "false");
       document.body.style.overflow = open ? "hidden" : "";
+      setMobileScrolled();
     }
 
     burger.addEventListener("click", function (e) {
